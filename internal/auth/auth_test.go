@@ -19,7 +19,7 @@ func TestGetAPIKeyOk(t *testing.T) {
 	}
 }
 
-func TestGetAPIKeyMalformed(t *testing.T){
+func TestGetAPIKeyMalformed(t *testing.T) {
 	headers := http.Header{}
 	headers.Add("Authorization", "Bearer testkey")
 	expected := errors.New("malformed authorization header")
@@ -29,7 +29,7 @@ func TestGetAPIKeyMalformed(t *testing.T){
 	}
 }
 
-func TestGetAPIKeyMissing(t *testing.T){
+func TestGetAPIKeyMissing(t *testing.T) {
 	headers := http.Header{}
 	expected := ErrNoAuthHeaderIncluded
 	_, err := GetAPIKey(headers)
@@ -37,4 +37,3 @@ func TestGetAPIKeyMissing(t *testing.T){
 		t.Fatalf("incorrect error - expected %s, got %s", expected, err)
 	}
 }
-
