@@ -38,10 +38,3 @@ func TestGetAPIKeyMissing(t *testing.T){
 	}
 }
 
-func TestBrokenTest(t *testing.T){
-	headers := http.Header{}
-	_, err := GetAPIKey(headers)
-	if err != nil {
-		t.Fatal("failed successfully")
-	}
-}
